@@ -1,0 +1,32 @@
+<h1>{{ user?.firstName }} {{ user?.lastName }}</h1>
+
+<div class="row">
+    <div class="col-6">
+        <input
+            type="email"
+            class="form-control"
+            value="{{ user?.emailAdress }}"
+            placeholder="Your email adress"
+        />
+    </div>
+</div>
+
+<div class="row justify-content-end">
+    <div class="col-6">
+        <button
+            class="btn btn-primary btn-sm float-right"
+            href="#"
+            role="button"
+            (click)="saveUser()"
+        >
+            Save
+        </button>
+        <a
+            class="btn btn-outline-secondary btn-sm float-right"
+            href="#"
+            role="button"
+            routerLink=".."
+            >Cancel</a
+        >
+    </div>
+</div>

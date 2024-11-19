@@ -1,40 +1,50 @@
 <p>Stan Teurlings 2213315</p>
-<h1>Casus</h1>
+<h1 class="mt-4">Casus</h1>
 <p>
     Met dit project wil ik een applicatie maken waarmee mensen een schildpad
     kunnen adopteren om deze te ondersteunen. Via de applicatie kunnen
     gebruikers een schildpad adopteren en maandelijks een bedrag doneren aan de
-    schildpaddenopvang die de zorg draagt voor de schildpadden.<br /><br />
+    schildpaddenopvang die de zorg draagt voor de schildpadden.
+</p>
+<p>
     Gebruikers registreren zich met hun naam, geboortedatum, e-mailadres en
     telefoonnummer. Ze kunnen hun profiel beheren en zien welke schildpadden zij
     hebben geadopteerd. De applicatie biedt een overzicht van alle beschikbare
     schildpadden voor adoptie. Voor elke schildpad worden details getoond, zoals
     naam, leeftijd, soort, een korte beschrijving van de achtergrond en
     gezondheidstoestand, en een foto. Ook wordt vermeld in welke opvanglocatie
-    de schildpad zich bevindt en hoeveel adoptanten het schildpad al heeft.<br /><br />
+    de schildpad zich bevindt en hoeveel adoptanten het schildpad al heeft.
+</p>
+<p>
     Een gebruiker kan een schildpad adopteren door een maandelijkse donatie te
     kiezen uit voorgestelde bedragen, bijvoorbeeld €5, €10, of €20 per maand.
     Gebruikers kunnen meerdere schildpadden adopteren, maar elke schildpad kan
     maximaal door 10 gebruikers tegelijk worden ondersteund. Zodra de limiet van
     10 adoptanten per schildpad is bereikt, wordt de schildpad gemarkeerd als
-    "volledig geadopteerd".<br /><br />
+    "volledig geadopteerd".
+</p>
+<p>
     Elke schildpaddenopvang kan hun geregistreerde schildpadden beheren. Zij
     kunnen nieuwe schildpadden toevoegen of bestaande informatie updaten. Per
     opvanglocatie worden de naam, het adres en contactgegevens weergegeven in de
-    applicatie.<br /><br />
+    applicatie.
+</p>
+<p>
     Gebruikers kunnen via de applicatie hun maandelijkse donaties bekijken en
     aanpassen. De opvanglocaties krijgen een overzicht van de donaties die zij
     ontvangen via adopties. Gebruikers ontvangen daarnaast regelmatig updates
     over hun geadopteerde schildpad, zoals verbeteringen in de gezondheid,
-    vrijlating in de natuur, of andere nieuwsberichten.<br /><br />
+    vrijlating in de natuur, of andere nieuwsberichten.
+</p>
+<p>
     Een gebruiker kan zich alleen registreren als ze 18 jaar of ouder zijn. Een
     schildpad kan niet door meer dan 10 gebruikers tegelijk worden geadopteerd.
     Donaties worden automatisch maandelijks afgeschreven, tenzij een gebruiker
     de adoptie opzegt.
 </p>
-<h1>ERD</h1>
+<h1 class="mt-4">ERD</h1>
 <img src="assets/erd.png" alt="ERD" />
-<h1>Functionele requirements</h1>
+<h1 class="mt-4">Functionele requirements</h1>
 <table class="table table-striped table-hover">
     <thead>
         <tr>
@@ -52,10 +62,18 @@
                 kunnen zien, zodat ik er een kan adopteren.
             </td>
             <td>
-                - De lijst toont alle schildpadden met hun naam, leeftijd,
-                soort, en beschikbaarheidsstatus.<br />
-                - Elke schildpad bevat een korte beschrijving en een foto.<br />
-                - Er moet een knop zijn om een schildpad te adopteren.
+                <ul>
+                    <li>
+                        De lijst toont alle schildpadden met hun naam, leeftijd,
+                        soort, en beschikbaarheidsstatus.
+                    </li>
+                    <li>
+                        Elke schildpad bevat een korte beschrijving en een foto.
+                    </li>
+                    <li>
+                        Er moet een knop zijn om een schildpad te adopteren.
+                    </li>
+                </ul>
             </td>
             <td>Must</td>
         </tr>
@@ -66,11 +84,17 @@
                 bekijken, zodat ik weet welke ik ondersteun.
             </td>
             <td>
-                - De gebruiker ziet een overzicht van alle geadopteerde
-                schildpadden.<br />
-                - Het overzicht toont adoptiedetails, zoals startdatum en
-                maandelijks bedrag.<br />
-                - De gebruiker kan hier een adoptie annuleren.
+                <ul>
+                    <li>
+                        De gebruiker ziet een overzicht van alle geadopteerde
+                        schildpadden.
+                    </li>
+                    <li>
+                        Het overzicht toont adoptiedetails, zoals startdatum en
+                        maandelijks bedrag.
+                    </li>
+                    <li>De gebruiker kan hier een adoptie annuleren.</li>
+                </ul>
             </td>
             <td>Must</td>
         </tr>
@@ -81,10 +105,16 @@
                 zodat ik mijn ondersteuning kan wijzigen.
             </td>
             <td>
-                - De gebruiker kan een nieuw bedrag selecteren uit
-                voorgedefinieerde opties.<br />
-                - De wijziging moet onmiddellijk worden bijgewerkt in het
-                systeem.
+                <ul>
+                    <li>
+                        De gebruiker kan een nieuw bedrag selecteren uit
+                        voorgedefinieerde opties.
+                    </li>
+                    <li>
+                        De wijziging moet onmiddellijk worden bijgewerkt in het
+                        systeem.
+                    </li>
+                </ul>
             </td>
             <td>Should</td>
         </tr>
@@ -95,10 +125,17 @@
                 toevoegen, zodat ze beschikbaar zijn voor adoptie.
             </td>
             <td>
-                - Er moet een formulier zijn om schildpadden toe te voegen met
-                naam, leeftijd, soort, beschrijving, foto en opvanglocatie.<br />
-                - Toegevoegde schildpadden verschijnen in de lijst met
-                beschikbare schildpadden.
+                <ul>
+                    <li>
+                        Er moet een formulier zijn om schildpadden toe te voegen
+                        met naam, leeftijd, soort, beschrijving, foto en
+                        opvanglocatie.
+                    </li>
+                    <li>
+                        Toegevoegde schildpadden verschijnen in de lijst met
+                        beschikbare schildpadden.
+                    </li>
+                </ul>
             </td>
             <td>Must</td>
         </tr>
@@ -109,10 +146,16 @@
                 geadopteerde schildpad, zodat ik op de hoogte blijf van updates.
             </td>
             <td>
-                - Gebruikers ontvangen e-mails met updates, zoals
-                gezondheidsstatus of vrijlating.<br />
-                - De gebruiker kan notificaties in- of uitschakelen via de
-                instellingen.
+                <ul>
+                    <li>
+                        Gebruikers ontvangen e-mails met updates, zoals
+                        gezondheidsstatus of vrijlating.
+                    </li>
+                    <li>
+                        De gebruiker kan notificaties in- of uitschakelen via de
+                        instellingen.
+                    </li>
+                </ul>
             </td>
             <td>Could</td>
         </tr>
@@ -123,9 +166,13 @@
                 zien, zodat ik inzicht krijg in de financiële ondersteuning.
             </td>
             <td>
-                - Het overzicht toont donaties per gebruiker, inclusief bedrag,
-                datum, en geadopteerde schildpad.<br />
-                - Het systeem biedt een exporteeroptie naar CSV.
+                <ul>
+                    <li>
+                        Het overzicht toont donaties per gebruiker, inclusief
+                        bedrag, datum, en geadopteerde schildpad.
+                    </li>
+                    <li>Het systeem biedt een exporteeroptie naar CSV.</li>
+                </ul>
             </td>
             <td>Must</td>
         </tr>

@@ -32,3 +32,102 @@
     Donaties worden automatisch maandelijks afgeschreven, tenzij een gebruiker
     de adoptie opzegt.
 </p>
+<h1>ERD</h1>
+<img src="assets/erd.png" alt="ERD" />
+<h1>Functionele requirements</h1>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Functionele Requirement</th>
+            <th>Acceptatiecriteria</th>
+            <th>Prioriteit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>FR-01</td>
+            <td>
+                Als gebruiker wil ik een lijst met beschikbare schildpadden
+                kunnen zien, zodat ik er een kan adopteren.
+            </td>
+            <td>
+                - De lijst toont alle schildpadden met hun naam, leeftijd,
+                soort, en beschikbaarheidsstatus.<br />
+                - Elke schildpad bevat een korte beschrijving en een foto.<br />
+                - Er moet een knop zijn om een schildpad te adopteren.
+            </td>
+            <td>Must</td>
+        </tr>
+        <tr>
+            <td>FR-02</td>
+            <td>
+                Als gebruiker wil ik mijn geadopteerde schildpadden kunnen
+                bekijken, zodat ik weet welke ik ondersteun.
+            </td>
+            <td>
+                - De gebruiker ziet een overzicht van alle geadopteerde
+                schildpadden.<br />
+                - Het overzicht toont adoptiedetails, zoals startdatum en
+                maandelijks bedrag.<br />
+                - De gebruiker kan hier een adoptie annuleren.
+            </td>
+            <td>Must</td>
+        </tr>
+        <tr>
+            <td>FR-03</td>
+            <td>
+                Als gebruiker wil ik mijn maandelijkse donatie kunnen aanpassen,
+                zodat ik mijn ondersteuning kan wijzigen.
+            </td>
+            <td>
+                - De gebruiker kan een nieuw bedrag selecteren uit
+                voorgedefinieerde opties.<br />
+                - De wijziging moet onmiddellijk worden bijgewerkt in het
+                systeem.
+            </td>
+            <td>Should</td>
+        </tr>
+        <tr>
+            <td>FR-04</td>
+            <td>
+                Als beheerder van een opvang wil ik nieuwe schildpadden kunnen
+                toevoegen, zodat ze beschikbaar zijn voor adoptie.
+            </td>
+            <td>
+                - Er moet een formulier zijn om schildpadden toe te voegen met
+                naam, leeftijd, soort, beschrijving, foto en opvanglocatie.<br />
+                - Toegevoegde schildpadden verschijnen in de lijst met
+                beschikbare schildpadden.
+            </td>
+            <td>Must</td>
+        </tr>
+        <tr>
+            <td>FR-05</td>
+            <td>
+                Als gebruiker wil ik notificaties ontvangen over mijn
+                geadopteerde schildpad, zodat ik op de hoogte blijf van updates.
+            </td>
+            <td>
+                - Gebruikers ontvangen e-mails met updates, zoals
+                gezondheidsstatus of vrijlating.<br />
+                - De gebruiker kan notificaties in- of uitschakelen via de
+                instellingen.
+            </td>
+            <td>Could</td>
+        </tr>
+        <tr>
+            <td>FR-06</td>
+            <td>
+                Als beheerder wil ik een overzicht van alle donaties kunnen
+                zien, zodat ik inzicht krijg in de financiële ondersteuning.
+            </td>
+            <td>
+                - Het overzicht toont donaties per gebruiker, inclusief bedrag,
+                datum, en geadopteerde schildpad.<br />
+                - Het systeem biedt een exporteeroptie naar CSV.
+            </td>
+            <td>Must</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,5 +1,9 @@
-.bordered{
-  border: 2px solid black;
-  margin: 10px;
-  padding: 10px;
+.row {
+  --bs-gutter-x: none;
+  scrollbar-gutter: stable both-edges;
+}
+
+.header {
+  padding-top: 20px;
+  background-color: #0077BE;
 }

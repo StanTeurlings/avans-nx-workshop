@@ -1,8 +1,9 @@
 <table class="table table-striped table-hover">
     <thead>
         <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
+        <th>Naam</th>
+        <th>E-mail</th>
+        <th>telefoonnummer</th>
     </thead>
     <tbody>
         <tr *ngFor="let user of users">
@@ -12,7 +13,8 @@
                     {{ user.firstName }} {{ user.lastName }}</a
                 >
             </td>
-            <td>{{ user.emailAdress }}</td>
+            <td>{{ user.emailAddress }}</td>
+            <td>{{ user.phoneNumber }}</td>
         </tr>
     </tbody>
 </table>

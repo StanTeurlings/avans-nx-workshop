@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User, UserRole } from './user.model';
+import { User } from './user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,23 +10,37 @@ export class UserService {
       id: 0,
       firstName: 'Stan',
       lastName: 'Teurlings',
-      emailAdress: 'S.Teurlings@avans.nl',
-      role: UserRole.admin
+      emailAddress: 'S.Teurlings@avans.nl',
+      phoneNumber: '06-12345678',
     },
     {
       id: 1,
       firstName: 'John',
       lastName: 'Doe',
-      emailAdress: 'J.Doe@avans.nl',
-      role: UserRole.guest
+      emailAddress: 'J.Doe@avans.nl',
+      phoneNumber: '06-87654321',
     },
     {
       id: 2,
       firstName: 'Jane',
       lastName: 'Doe',
-      emailAdress: 'J.Doe@avans.nl',
-      role: UserRole.guest
+      emailAddress: 'J.Doe@avans.nl',
+      phoneNumber: '06-12348765',
     },
+    {
+      id: 3,
+      firstName: 'Max',
+      lastName: 'Lopez',
+      emailAddress: 'M.Lopez@avans.nl',
+      phoneNumber: '06-87651234',
+    },
+    {
+      id: 4,
+      firstName: 'Pam',
+      lastName: 'Quinn',
+      emailAddress: 'P.Quinn@avans.nl',
+      phoneNumber: '06-12345678',
+    }
   ];
 
   constructor() {

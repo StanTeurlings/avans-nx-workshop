@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Component } from "@angular/core";
 
 @Component({
     selector: 'avans-nx-workshop-nav',
     templateUrl: './nav.component.html',
-    styles: []
+    styleUrls: ['./nav.component.css']
 })
 export class NavComponent {}

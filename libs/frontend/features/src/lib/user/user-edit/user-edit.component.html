@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-6">
+        <p>Voornaam:</p>
+        <input
+            type="email"
+            class="form-control"
+            value="{{ user?.firstName }}"
+            placeholder="Voornaam"
+        />
+    </div>
+    <div class="col-6">
+        <p>Achternaam:</p>
+        <input
+            type="email"
+            class="form-control"
+            value="{{ user?.lastName }}"
+            placeholder="Achternaam"
+        />
+    </div>
+</div>
+
+<br />
+<div class="row">
+    <div class="col-12">
+        <p>E-mail</p>
+        <input
+            type="email"
+            class="form-control"
+            value="{{ user?.emailAddress }}"
+            placeholder="e-mail"
+        />
+    </div>
+</div>
+
+<br />
+<div class="row">
+    <div class="col-12">
+        <p>Telefoonnummer</p>
+        <input
+            type="email"
+            class="form-control"
+            value="{{ user?.phoneNumber }}"
+            placeholder="Telefoonnummer"
+        />
+    </div>
+</div>
+
+<div class="row justify-content-end">
+    <div class="col-12">
+        <br />
+        <button
+            class="btn btn-primary btn-sm float-right"
+            href="#"
+            role="button"
+            (click)="saveUser()"
+        >
+            Save
+        </button>
+        <a
+            class="btn btn-outline-secondary btn-sm float-right"
+            href="#"
+            role="button"
+            routerLink=".."
+            >Cancel</a
+        >
+    </div>
+</div>

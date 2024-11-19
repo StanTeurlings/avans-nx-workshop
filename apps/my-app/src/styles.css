@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #2ECC71;
+    border-color: #2ECC71;
+    margin: 0px 15px 0px 0px;
+}
+
+.btn-primary:hover {
+    background-color: #2AB764;
+    border-color: #2AB764;
+}

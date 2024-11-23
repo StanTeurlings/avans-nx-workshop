@@ -9,7 +9,7 @@
         <tr *ngFor="let user of users">
             <td>{{ user.id }}</td>
             <td>
-                <a routerLink="{{ user.id }}">
+                <a routerLink="[user.id]">
                     {{ user.firstName }} {{ user.lastName }}</a
                 >
             </td>

@@ -29,20 +29,20 @@
             "@avans-nx-workshop/features": [
                 "libs/frontend/features/src/index.ts"
             ],
-            "@avans-nx-workshop/share-a-meal/auth": [
-                "libs/share-a-meal/auth/src/index.ts"
+            "@avans-nx-workshop/frontend/auth": [
+                "libs/frontend/auth/src/index.ts"
             ],
-            "@avans-nx-workshop/share-a-meal/common": [
-                "libs/share-a-meal/common/src/index.ts"
+            "@avans-nx-workshop/frontend/common": [
+                "libs/frontend/common/src/index.ts"
             ],
-            "@avans-nx-workshop/share-a-meal/features": [
-                "libs/share-a-meal/features/src/index.ts"
+            "@avans-nx-workshop/frontend/features": [
+                "libs/frontend/features/src/index.ts"
             ],
-            "@avans-nx-workshop/share-a-meal/ui": [
-                "libs/share-a-meal/ui/src/index.ts"
+            "@avans-nx-workshop/frontend/ui": [
+                "libs/frontend/ui/src/index.ts"
             ],
-            "@avans-nx-workshop/share-a-meal/user": [
-                "libs/share-a-meal/user/src/index.ts"
+            "@avans-nx-workshop/frontend/user": [
+                "libs/frontend/user/src/index.ts"
             ],
             "@avans-nx-workshop/shared/api": ["libs/shared/api/src/index.ts"],
             "@avans-nx-workshop/shared/util-env": [

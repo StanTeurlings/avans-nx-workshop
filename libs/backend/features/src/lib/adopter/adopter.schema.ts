@@ -60,3 +60,5 @@ export class Adopter implements IAdopter {
     birthDate!: Date;
     
 }
+
+export const AdopterSchema = SchemaFactory.createForClass(Adopter);

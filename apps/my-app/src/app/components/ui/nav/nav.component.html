@@ -18,6 +18,42 @@
                 New User
             </a>
         </li>
+        <li mdbDropdown class="nav-item dropdown">
+            <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuAdopter"
+                role="button"
+                mdbDropdownToggle
+                aria-expanded
+            >
+                Adopter
+            </a>
+            <ul
+                mdbDropdownMenu
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuAdopter"
+            >
+                <li>
+                    <a
+                        class="dropdown-item"
+                        routerLink="/adopters"
+                        routerLinkActive="active"
+                        ariaCurrentWhenActive="page"
+                        >Adopterlijst</a
+                    >
+                </li>
+                <li>
+                    <a
+                        class="dropdown-item"
+                        routerLink="/adopters/new"
+                        routerLinkActive="active"
+                        ariaCurrentWhenActive="page"
+                        >Nieuwe adopter</a
+                    >
+                </li>
+            </ul>
+        </li>
         <li>
             <a
                 routerLink="/about"

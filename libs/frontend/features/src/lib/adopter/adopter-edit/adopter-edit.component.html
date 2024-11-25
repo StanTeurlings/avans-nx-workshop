@@ -1,1 +1,20 @@
-<p>adopter-edit works!</p>
+<form
+    #adopterEditForm="ngForm"
+    name="adopterEditForm"
+    (ngSubmit)="adopterEditForm.form.valid && onSubmit()"
+    novalidate
+>
+    <div class="form-row">
+        <div class="form-group col-sm-12 col-lg-4">
+            <label for="adopterFirstName">Voornaam:</label>
+            <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="adopter!.firstName"
+                name="adopterFirstName"
+                #adopterFirstName="ngModel"
+                required
+            />
+        </div>
+    </div>
+</form>

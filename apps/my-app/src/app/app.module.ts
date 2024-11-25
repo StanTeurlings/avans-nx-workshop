@@ -11,6 +11,8 @@ import { UserListComponent } from 'libs/frontend/features/src/lib/user/user-list
 import { UserDetailComponent } from 'libs/frontend/features/src/lib/user/user-detail/user-detail.component';
 import { UserEditComponent } from 'libs/frontend/features/src/lib/user/user-edit/user-edit.component';
 import { NavComponent } from "./components/ui/nav/nav.component";
+import { FormsModule } from '@angular/forms';
+import { FeaturesModule } from 'libs/frontend/features/src/lib/features.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { NavComponent } from "./components/ui/nav/nav.component";
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
+    FeaturesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -9,7 +9,7 @@ import {
     ICreateMeal,
     IUpdateMeal,
     IUpsertMeal,
-    IUserIdentity,
+    IAdopterIdentity,
     MealSort
 } from '@avans-nx-workshop/shared/api';
 
@@ -57,7 +57,7 @@ export class UpsertMealDto implements IUpsertMeal {
     sort!: MealSort;
 
     // @IsNotEmpty()
-    cook!: IUserIdentity;
+    cook!: IAdopterIdentity;
 }
 
 export class UpdateMealDto implements IUpdateMeal {

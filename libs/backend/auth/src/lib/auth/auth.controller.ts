@@ -9,12 +9,12 @@ import {
 import { AuthService } from './auth.service';
 import { Public } from '../decorators/decorators';
 import {
-    IUserCredentials,
-    IUserIdentity,
-    IUserRegistration
+    IAdopterCredentials,
+    IAdopterIdentity,
+    IAdopterRegistration
 } from '@avans-nx-workshop/shared/api';
-import { CreateUserDto } from '@avans-nx-workshop/backend/dto';
-import { UserExistGuard } from '@avans-nx-workshop/backend/user';
+import { CreateAdopterDto } from '@avans-nx-workshop/backend/dto';
+import { AdopterExistGuard } from '@avans-nx-workshop/backend/adopter';
 
 @Controller('auth')
 export class AuthController {
@@ -24,16 +24,16 @@ export class AuthController {
 
     @Public()
     @Post('login')
-    async login(@Body() credentials: IUserCredentials): Promise<IUserIdentity> {
+    async login(@Body() credentials: IAdopterCredentials): Promise<IAdopterIdentity> {
         this.logger.log('Login');
         return await this.authService.login(credentials);
     }
 
     @Public()
-    @UseGuards(UserExistGuard)
+    @UseGuards(AdopterExistGuard)
     @Post('register')
-    async register(@Body() user: CreateUserDto): Promise<IUserIdentity> {
+    async register(@Body() Adopter: CreateAdopterDto): Promise<IAdopterIdentity> {
         this.logger.log('Register');
-        return await this.authService.register(user);
+        return await this.authService.register(Adopter);
     }
 }

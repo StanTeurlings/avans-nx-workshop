@@ -3,25 +3,54 @@ import { Document, Schema as MongooseSchema } from 'mongoose';
 // import { v4 as uuid } from 'uuid';
 import isEmail from 'validator/lib/isEmail';
 import {
-    IMeal,
-    IUser,
-    UserGender,
-    UserRole
+    IAdopter,
+    AdopterGender
 } from '@avans-nx-workshop/shared/api';
 import { IsMongoId } from 'class-validator';
 
-export type UserDocument = User & Document;
+export type AdopterDocument = Adopter & Document;
 
 @Schema()
-export class User implements IUser {
+export class Adopter implements IAdopter {
     @IsMongoId()
     _id!: string;
 
     @Prop({
         required: true,
+        select: true,
         type: String
     })
-    name!: string;
+    firstName= '';
+
+    @Prop({
+        required: true,
+        select: true,
+        type: String
+    })
+    lastName= '';
+
+    @Prop({
+        required: true,
+        select: true,
+        type: String
+    })
+    address= '';
+
+    @Prop({
+        required: true,
+        select: true,
+        type: String
+    })
+    phoneNumber= '';
+
+    @Prop({
+        required: true,
+        select: true,
+        type: Date
+    })
+    birthDate= new Date();
+
+    token?: string | undefined;
 
     @Prop({
         required: true,
@@ -52,30 +81,9 @@ export class User implements IUser {
     @Prop({
         required: false,
         type: String,
-        default: UserRole.Guest
+        default: AdopterGender.Unknown
     })
-    role: UserRole = UserRole.Guest;
-
-    @Prop({
-        required: false,
-        type: String,
-        default: UserGender.Unknown
-    })
-    gender: UserGender = UserGender.Unknown;
-
-    @Prop({
-        required: false,
-        type: Boolean,
-        default: true
-    })
-    isActive = true;
-
-    @Prop({
-        default: [],
-        type: [MongooseSchema.Types.ObjectId],
-        ref: 'Meal'
-    })
-    meals: IMeal[] = [];
+    gender: AdopterGender = AdopterGender.Unknown;
 }
 
-export const UserSchema = SchemaFactory.createForClass(User);
+export const AdopterSchema = SchemaFactory.createForClass(Adopter);

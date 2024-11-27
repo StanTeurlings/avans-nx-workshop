@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserDetailsComponent } from './users/user-details/user-details.component';
-import { UserListComponent } from './users/user-userlist/user-list.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserListComponent } from './user/user-list/user-list.component';
 
 @NgModule({
     imports: [CommonModule],
-    declarations: [UserDetailsComponent, UserListComponent]
+    declarations: [UserDetailComponent, UserListComponent]
 })
 export class FeaturesModule {}

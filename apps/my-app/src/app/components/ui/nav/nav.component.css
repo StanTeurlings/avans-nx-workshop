@@ -1,8 +1,9 @@
 nav {
 	background-color: #0077BE;
 	color: white;
-    padding: 25px 0px 0px 0px;
     margin-left: none;
+    padding-left: 15%;
+    padding-bottom: 5px;
 }  
 
 ul {
@@ -11,7 +12,7 @@ ul {
 
 li {
     display: inline;
-    padding: 0 30px;
+    padding-left: 60px;
 }
 
 li a {

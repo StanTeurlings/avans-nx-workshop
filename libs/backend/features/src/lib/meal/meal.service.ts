@@ -5,9 +5,9 @@ import { Meal as MealModel, MealDocument } from './meal.schema';
 import { IMeal } from '@avans-nx-workshop/shared/api';
 import { CreateMealDto, UpdateMealDto } from '@avans-nx-workshop/backend/dto';
 import {
-    AdopterDocument,
-    Adopter as AdopterModel
-} from '@avans-nx-workshop/backend/adopter';
+    userDocument,
+    user as userModel
+} from '@avans-nx-workshop/backend/user';
 
 @Injectable()
 export class MealService {
@@ -15,7 +15,7 @@ export class MealService {
 
     constructor(
         @InjectModel(MealModel.name) private mealModel: Model<MealDocument>,
-        @InjectModel(AdopterModel.name) private AdopterModel: Model<AdopterDocument>
+        @InjectModel(userModel.name) private userModel: Model<userDocument>
     ) {}
 
     /**
@@ -43,17 +43,17 @@ export class MealService {
 
     async create(req: any): Promise<IMeal | null> {
         const meal = req.body;
-        const Adopter_id = req.Adopter.Adopter_id;
+        const user_id = req.user.user_id;
 
-        if (meal && Adopter_id) {
-            this.logger.log(`Create meal ${meal.title} for ${Adopter_id}`);
-            const Adopter = await this.AdopterModel
-                .findOne({ _id: Adopter_id })
+        if (meal && user_id) {
+            this.logger.log(`Create meal ${meal.title} for ${user_id}`);
+            const user = await this.userModel
+                .findOne({ _id: user_id })
                 .select('-password -meals -role -__v -isActive')
                 .exec();
             const createdItem = {
                 ...meal,
-                cook: Adopter
+                cook: user
             };
             return this.mealModel.create(createdItem);
         }

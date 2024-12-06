@@ -2,8 +2,3 @@
   --bs-gutter-x: none;
   scrollbar-gutter: stable both-edges;
 }
-
-.header {
-  padding-top: 20px;
-  background-color: #0077BE;
-}

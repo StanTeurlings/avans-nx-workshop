@@ -170,9 +170,9 @@ Error: NX_VERSION_CHANGED
 [NX Daemon Server] - 2024-11-25T12:49:00.322Z - Closed a connection. Number of open connections: 1
 [NX Daemon Server] - 2024-11-25T12:49:00.330Z - Closed a connection. Number of open connections: 0
 [NX Daemon Server] - 2024-11-25T12:51:49.348Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-11-25T12:51:49.351Z - [WATCHER]: libs/frontend/features/src/lib/adopter/adopter-edit/adopter-edit.component.html was modified
+[NX Daemon Server] - 2024-11-25T12:51:49.351Z - [WATCHER]: libs/frontend/features/src/lib/user/user-edit/user-edit.component.html was modified
 [NX Daemon Server] - 2024-11-25T12:51:49.468Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-11-25T12:51:49.468Z - [REQUEST]: libs/frontend/features/src/lib/adopter/adopter-edit/adopter-edit.component.html
+[NX Daemon Server] - 2024-11-25T12:51:49.468Z - [REQUEST]: libs/frontend/features/src/lib/user/user-edit/user-edit.component.html
 [NX Daemon Server] - 2024-11-25T12:51:49.468Z - [REQUEST]: 
 [NX Daemon Server] - 2024-11-25T12:51:49.487Z - Time taken for 'hash changed files from watcher' 1.2779000000155065ms
 [NX Daemon Server] - 2024-11-25T12:51:49.541Z - Time taken for 'build-project-configs' 52.3066000000108ms

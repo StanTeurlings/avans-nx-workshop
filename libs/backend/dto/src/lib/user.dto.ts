@@ -1,17 +1,18 @@
 import { IsNotEmpty, IsString, IsBoolean, IsOptional, IsDate, isString } from 'class-validator';
 import {
-    // ICreateAdopter,
-    IUpdateAdopter,
-    IUpsertAdopter,
-    IAdopterRegistration,
+    // ICreateuser,
+    IUpdateuser,
+    IUpsertuser,
+    IuserRegistration,
     Id,
-    AdopterGender
+    userGender,
+    userRole
 } from '@avans-nx-workshop/shared/api';
 
-export class CreateAdopterDto implements IAdopterRegistration {
+export class CreateuserDto implements IuserRegistration {
     @IsString()
     @IsNotEmpty()
-    firstName!: string;
+    name!: string;
 
     @IsString()
     @IsNotEmpty()
@@ -26,10 +27,10 @@ export class CreateAdopterDto implements IAdopterRegistration {
     lastName!: string;
 }
 
-export class UpsertAdopterDto implements IUpsertAdopter {
+export class UpsertuserDto implements IUpsertuser {
     @IsString()
     @IsNotEmpty()
-    firstName!: string;
+    name!: string;
 
     @IsString()
     @IsNotEmpty()
@@ -68,13 +69,17 @@ export class UpsertAdopterDto implements IUpsertAdopter {
 
     @IsString()
     @IsNotEmpty()
-    gender: AdopterGender = AdopterGender.Unknown;
+    gender: userGender = userGender.Unknown;
+
+    @IsString()
+    @IsNotEmpty()
+    userRole: userRole = userRole.Adopter;
 }
 
-export class UpdateAdopterDto implements IUpdateAdopter {
+export class UpdateuserDto implements IUpdateuser {
     _id?: string | undefined;
 
     @IsString()
     @IsOptional()
-    firstName!: string;
+    name!: string;
 }

@@ -1,5 +1,6 @@
 nav {
-	background-color: #0077BE;
+	background: rgb(0,119,190);
+    background: linear-gradient(90deg, rgba(0,119,190,1) 0%, rgba(0,65,133,1) 50%, rgba(0,119,190,1) 100%);
 	color: white;
     margin-left: none;
     padding-left: 15%;

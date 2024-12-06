@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Schema as MongooseSchema } from 'mongoose';
-import { MealSort, IAdopterInfo } from '@avans-nx-workshop/shared/api';
+import { MealSort, IuserInfo } from '@avans-nx-workshop/shared/api';
 import { IMeal } from '@avans-nx-workshop/shared/api';
 import { IsMongoId } from 'class-validator';
 
@@ -26,8 +26,8 @@ export class Meal implements IMeal {
     @Prop({ required: true, type: Object })
     sort!: MealSort;
 
-    @Prop({ required: false, type: MongooseSchema.Types.ObjectId, ref: 'Adopter' })
-    cook!: IAdopterInfo;
+    @Prop({ required: false, type: MongooseSchema.Types.ObjectId, ref: 'user' })
+    cook!: IuserInfo;
 }
 
 export const MealSchema = SchemaFactory.createForClass(Meal);

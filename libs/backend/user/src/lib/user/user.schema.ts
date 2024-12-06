@@ -3,15 +3,16 @@ import { Document, Schema as MongooseSchema } from 'mongoose';
 // import { v4 as uuid } from 'uuid';
 import isEmail from 'validator/lib/isEmail';
 import {
-    IAdopter,
-    AdopterGender
+    Iuser,
+    userGender,
+    userRole
 } from '@avans-nx-workshop/shared/api';
 import { IsMongoId } from 'class-validator';
 
-export type AdopterDocument = Adopter & Document;
+export type userDocument = user & Document;
 
 @Schema()
-export class Adopter implements IAdopter {
+export class user implements Iuser {
     @IsMongoId()
     _id!: string;
 
@@ -20,7 +21,7 @@ export class Adopter implements IAdopter {
         select: true,
         type: String
     })
-    firstName= '';
+    name= '';
 
     @Prop({
         required: true,
@@ -81,9 +82,16 @@ export class Adopter implements IAdopter {
     @Prop({
         required: false,
         type: String,
-        default: AdopterGender.Unknown
+        default: userGender.Unknown
     })
-    gender: AdopterGender = AdopterGender.Unknown;
+    gender: userGender = userGender.Unknown;
+
+    @Prop({
+        required: true,
+        type: String,
+        default: userRole.Adopter
+    })
+    userRole: userRole = userRole.Adopter;
 }
 
-export const AdopterSchema = SchemaFactory.createForClass(Adopter);
+export const userSchema = SchemaFactory.createForClass(user);

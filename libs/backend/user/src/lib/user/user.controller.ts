@@ -11,6 +11,7 @@ import { userService } from './user.service';
 import { IuserInfo, Iuser } from '@avans-nx-workshop/shared/api';
 import { CreateuserDto, UpdateuserDto } from '@avans-nx-workshop/backend/dto';
 import { userExistGuard } from './user-exists.guard';
+import { AuthGuard } from '@avans-nx-workshop/backend/auth';
 
 @Controller('user')
 export class userController {
@@ -34,7 +35,7 @@ export class userController {
     }
 
     @Post('')
-    @UseGuards(userExistGuard)
+    @UseGuards(userExistGuard, AuthGuard)
     create(@Body() user: CreateuserDto): Promise<IuserInfo> {
         return this.userService.create(user);
     }

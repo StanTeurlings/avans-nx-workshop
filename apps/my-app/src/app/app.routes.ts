@@ -4,15 +4,16 @@ import { UserListComponent } from 'libs/frontend/features/src/lib/user/user-list
 import { UserDetailComponent } from 'libs/frontend/features/src/lib/user/user-detail/user-detail.component';
 import { UserEditComponent } from 'libs/frontend/features/src/lib/user/user-edit/user-edit.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent} from 'libs/frontend/features/src/lib/auth/login/login.component';
 
 export const appRoutes: Routes = [
     { path: '', pathMatch: "full", component: DashboardComponent },
     { path: 'about', pathMatch: "full", component: AboutComponent },
+    { path: 'login', pathMatch: "full", component: LoginComponent},
     { path: 'users', pathMatch: "full", component: UserListComponent },
     { path: 'user/new', pathMatch: "full", component: UserEditComponent },
     { path: 'users/:id', pathMatch: "full", component: UserDetailComponent },
     { path: 'users/:id/edit', pathMatch: "full", component: UserEditComponent },
     { path: '**', pathMatch: "full", redirectTo: '' }
 ];
-
 export class AppRoutingModule {}

@@ -13,11 +13,20 @@ import { IuserCredentials, IuserIdentity } from '@avans-nx-workshop/shared/api';
 import { CreateuserDto } from '@avans-nx-workshop/backend/dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
     //
+    public currentUser$ = new BehaviorSubject<IuserIdentity | undefined>(undefined);
+
     private readonly logger = new Logger(AuthService.name);
+    private readonly CURRENT_USER = 'currentUser';
+
+    private readonly headers = new HttpHeaders({
+        'Content-Type': 'application/json'
+    });
 
     constructor(
         @InjectModel(userModel.name) private userModel: Model<userDocument>,
@@ -76,5 +85,14 @@ export class AuthService {
         this.logger.debug('user not found, creating');
         const createdItem = await this.userModel.create(user);
         return createdItem;
+    }
+
+    getUserFromLocalStorage(): Observable<IuserIdentity>{
+        const localUser = JSON.parse(localStorage.getItem(this.CURRENT_USER) || '{}');
+        return of(localUser);
+    }
+
+    private saveUserToLocalStorage(user: IuserIdentity): void {  
+        localStorage.setItem(this.CURRENT_USER, JSON.stringify(user));
     }
 }

@@ -1,5 +1,5 @@
 import { Id } from './id.type';
-import { IuserIdentity } from './user.interface';
+import { IUserIdentity } from './user.interface';
 
 export enum MealSort {
     Breakfast = 'Breakfast',
@@ -15,7 +15,7 @@ export interface IMeal {
     isVega: boolean;
     dateServed: Date;
     sort: MealSort;
-    cook: IuserIdentity;
+    cook: IUserIdentity;
 }
 
 export type ICreateMeal = Pick<IMeal, 'title' | 'description' | 'sort'>;

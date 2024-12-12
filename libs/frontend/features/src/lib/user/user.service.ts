@@ -6,41 +6,41 @@ import { User } from './user.model';
 })
 export class UserService {
   readonly users: User[] = [
-    {
-      id: 0,
-      name: 'Stan',
-      lastName: 'Teurlings',
-      emailAddress: 'S.Teurlings@avans.nl',
-      phoneNumber: '06-12345678',
-    },
-    {
-      id: 1,
-      name: 'John',
-      lastName: 'Doe',
-      emailAddress: 'J.Doe@avans.nl',
-      phoneNumber: '06-87654321',
-    },
-    {
-      id: 2,
-      name: 'Jane',
-      lastName: 'Doe',
-      emailAddress: 'J.Doe@avans.nl',
-      phoneNumber: '06-12348765',
-    },
-    {
-      id: 3,
-      name: 'Max',
-      lastName: 'Lopez',
-      emailAddress: 'M.Lopez@avans.nl',
-      phoneNumber: '06-87651234',
-    },
-    {
-      id: 4,
-      name: 'Pam',
-      lastName: 'Quinn',
-      emailAddress: 'P.Quinn@avans.nl',
-      phoneNumber: '06-12345678',
-    }
+    // {
+    //   id_: 0,
+    //   name: 'Stan',
+    //   lastName: 'Teurlings',
+    //   emailAddress: 'S.Teurlings@avans.nl',
+    //   phoneNumber: '06-12345678',
+    // },
+    // {
+    //   id: 1,
+    //   name: 'John',
+    //   lastName: 'Doe',
+    //   emailAddress: 'J.Doe@avans.nl',
+    //   phoneNumber: '06-87654321',
+    // },
+    // {
+    //   id: 2,
+    //   name: 'Jane',
+    //   lastName: 'Doe',
+    //   emailAddress: 'J.Doe@avans.nl',
+    //   phoneNumber: '06-12348765',
+    // },
+    // {
+    //   id: 3,
+    //   name: 'Max',
+    //   lastName: 'Lopez',
+    //   emailAddress: 'M.Lopez@avans.nl',
+    //   phoneNumber: '06-87651234',
+    // },
+    // {
+    //   id: 4,
+    //   name: 'Pam',
+    //   lastName: 'Quinn',
+    //   emailAddress: 'P.Quinn@avans.nl',
+    //   phoneNumber: '06-12345678',
+    // }
   ];
 
   constructor() {
@@ -51,8 +51,8 @@ export class UserService {
     return this.users;
   }
 
-  getUser(id: number): User {
-    const user = this.users.find(user => user.id === id);
+  getUser(id: String): User {
+    const user = this.users.find(user => user._id === id);
     if (!user) {
       throw new Error(`User with id ${id} not found`);
     }
@@ -63,8 +63,8 @@ export class UserService {
     this.users.push(user);
   }
 
-  updateUser(id: number, user: User): void {
-    const index = this.users.findIndex(user => user.id === id);
+  updateUser(id: String, user: User): void {
+    const index = this.users.findIndex(user => user._id === id);
     if (index === -1) {
       throw new Error(`User with id ${id} not found`);
     }

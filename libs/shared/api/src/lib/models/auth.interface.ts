@@ -1,7 +1,7 @@
 /**
  * User information required for loggin in
  */
-export interface IuserCredentials {
+export interface IUserCredentials {
     emailAddress: string;
     password: string;
 }
@@ -9,7 +9,7 @@ export interface IuserCredentials {
 /**
  * User information required for registration
  */
-export interface IuserRegistration extends IuserCredentials {
+export interface IUserRegistration extends IUserCredentials {
     name: string;
 }
 

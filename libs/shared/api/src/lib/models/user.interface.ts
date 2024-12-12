@@ -1,5 +1,5 @@
 import { IEntity } from 'libs/share-a-meal/common/src/lib/entity/entity.model';
-import { IToken, IuserRegistration } from './auth.interface';
+import { IToken, IUserRegistration } from './auth.interface';
 import { Id } from './id.type';
 
 export enum userGender {
@@ -18,8 +18,9 @@ export enum userRole {
  * Minimal user information
  */
 
-export interface IuserIdentity extends IEntity {
+export interface IUserIdentity extends IEntity {
     name: string;
+    lastName: string;
     password: string;
     emailAddress: string;
     address: string;
@@ -31,7 +32,7 @@ export interface IuserIdentity extends IEntity {
 /**
  * All user information, excl. domain entities
  */
-export interface IuserInfo extends IuserRegistration {
+export interface IUserInfo extends IUserRegistration {
     _id: Id;
     name: string;
     lastName: string;
@@ -49,10 +50,10 @@ export interface IuserInfo extends IuserRegistration {
 /**
  * All user information, incl. domain entities
  */
-export interface Iuser extends IuserInfo {
+export interface IUser extends IUserInfo {
     // turtle: ITurtle[];
 }
 
-export type ICreateuser = Pick<Iuser, 'name' | 'password' | 'emailAddress'>;
-export type IUpdateuser = Partial<Omit<Iuser, 'id'>>;
-export type IUpsertuser = Iuser;
+export type ICreateuser = Pick<IUser, 'name' | 'password' | 'emailAddress'>;
+export type IUpdateuser = Partial<Omit<IUser, 'id'>>;
+export type IUpsertuser = IUser;

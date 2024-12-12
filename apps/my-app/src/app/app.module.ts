@@ -11,6 +11,8 @@ import { UserListComponent } from 'libs/frontend/features/src/lib/user/user-list
 import { UserDetailComponent } from 'libs/frontend/features/src/lib/user/user-detail/user-detail.component';
 import { UserEditComponent } from 'libs/frontend/features/src/lib/user/user-edit/user-edit.component';
 import { NavComponent } from "./components/ui/nav/nav.component";
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthModule } from 'libs/frontend/features/src/lib/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { NavComponent } from "./components/ui/nav/nav.component";
     UserDetailComponent,
     UserEditComponent,
     NavComponent,
-  ],
+    ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

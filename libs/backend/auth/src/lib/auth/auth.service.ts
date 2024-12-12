@@ -9,7 +9,7 @@ import {
     userDocument
 } from '@avans-nx-workshop/backend/user';
 import { JwtService } from '@nestjs/jwt';
-import { IuserCredentials, IuserIdentity } from '@avans-nx-workshop/shared/api';
+import { IUserCredentials, IUserIdentity } from '@avans-nx-workshop/shared/api';
 import { CreateuserDto } from '@avans-nx-workshop/backend/dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -20,11 +20,11 @@ export class AuthService {
     private readonly logger = new Logger(AuthService.name);
 
     constructor(
-        @InjectModel(userModel.name) private userModel: Model<userDocument>,
+        @InjectModel('user') private userModel: Model<userDocument>,
         private jwtService: JwtService
     ) {}
 
-    async validateuser(credentials: IuserCredentials): Promise<any> {
+    async validateuser(credentials: IUserCredentials): Promise<any> {
         this.logger.log('validateuser');
         const user = await this.userModel.findOne({
             emailAddress: credentials.emailAddress
@@ -35,7 +35,7 @@ export class AuthService {
         return null;
     }
 
-    async login(credentials: IuserCredentials): Promise<IuserIdentity> {
+    async login(credentials: IUserCredentials): Promise<IUserIdentity> {
         this.logger.log('login ' + credentials.emailAddress);
         return await this.userModel
             .findOne({
@@ -54,6 +54,7 @@ export class AuthService {
                         lastName: user.lastName,
                         emailAddress: user.emailAddress,
                         profileImgUrl: user.profileImgUrl,
+                        userRole: user.userRole,
                         token: this.jwtService.sign(payload)
                     };
                 } else {
@@ -67,7 +68,7 @@ export class AuthService {
             });
     }
 
-    async register(user: CreateuserDto): Promise<IuserIdentity> {
+    async register(user: CreateuserDto): Promise<IUserIdentity> {
         this.logger.log(`Register user ${user.name}`);
         if (await this.userModel.findOne({ emailAddress: user.emailAddress })) {
             this.logger.debug('user exists');

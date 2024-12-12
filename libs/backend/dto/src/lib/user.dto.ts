@@ -3,13 +3,13 @@ import {
     // ICreateuser,
     IUpdateuser,
     IUpsertuser,
-    IuserRegistration,
+    IUserRegistration,
     Id,
     userGender,
     userRole
 } from '@avans-nx-workshop/shared/api';
 
-export class CreateuserDto implements IuserRegistration {
+export class CreateuserDto implements IUserRegistration {
     @IsString()
     @IsNotEmpty()
     name!: string;

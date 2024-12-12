@@ -9,38 +9,54 @@
                 />
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form>
-                    <!-- Email input -->
-                    <div data-mdb-input-init class="form-outline mb-4">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example3"
                             >Email:</label
                         >
                         <input
                             type="email"
                             id="form3Example3"
+                            formControlName="email"
                             class="form-control form-control-lg"
                             placeholder="Voer email in"
                         />
+                        <div
+                            *ngIf="
+                                loginForm.get('email')?.invalid &&
+                                loginForm.get('email')?.touched
+                            "
+                            class="text-danger"
+                        >
+                            Ongeldig e-mailadres
+                        </div>
                     </div>
 
-                    <!-- Password input -->
-                    <div data-mdb-input-init class="form-outline mb-3">
+                    <div class="form-outline mb-3">
                         <label class="form-label" for="form3Example4"
                             >Wachtwoord:</label
                         >
                         <input
                             type="password"
                             id="form3Example4"
+                            formControlName="password"
                             class="form-control form-control-lg"
                             placeholder="Voer wachtwoord in"
                         />
+                        <div
+                            *ngIf="
+                                loginForm.get('password')?.invalid &&
+                                loginForm.get('password')?.touched
+                            "
+                            class="text-danger"
+                        >
+                            Wachtwoord is vereist (min. 6 tekens)
+                        </div>
                     </div>
 
                     <div class="text-center text-lg-start mt-5 pt-2">
                         <button
-                            type="button"
-                            data-mdb-button-init
-                            data-mdb-ripple-init
+                            type="submit"
                             class="btn btn-primary btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem"
                         >

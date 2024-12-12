@@ -22,7 +22,7 @@ export class UserEditComponent implements OnInit{
         this.route.paramMap.subscribe((params) => {
             this.userId = params.get('id');
             if (this.userId) {
-                this.user = this.userService.getUser(Number(this.userId));
+                this.user = this.userService.getUser(String(this.userId));
             } else {
                 this.user = new User();
             }
@@ -32,7 +32,7 @@ export class UserEditComponent implements OnInit{
     saveUser() {
         if (this.userId) {
             if (this.user) {
-                this.userService.updateUser(Number(this.userId), this.user);
+                this.userService.updateUser(String(this.userId), this.user);
             }
         } else {
             if (this.user) {

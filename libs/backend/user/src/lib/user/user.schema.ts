@@ -3,7 +3,7 @@ import { Document, Schema as MongooseSchema } from 'mongoose';
 // import { v4 as uuid } from 'uuid';
 import isEmail from 'validator/lib/isEmail';
 import {
-    Iuser,
+    IUser,
     userGender,
     userRole
 } from '@avans-nx-workshop/shared/api';
@@ -12,7 +12,7 @@ import { IsMongoId } from 'class-validator';
 export type userDocument = user & Document;
 
 @Schema()
-export class user implements Iuser {
+export class user implements IUser {
     @IsMongoId()
     _id!: string;
 
